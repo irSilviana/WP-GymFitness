@@ -24,19 +24,32 @@
 define('WP_ENV', 'production');
 
 // ** Database settings ** //
-if (getenv('WP_ENV') === 'production') {
+if (defined('WP_ENV') && WP_ENV === 'production') {
 	// Production database details
 	define('DB_NAME', getenv('DB_NAME'));
 	define('DB_USER', getenv('DB_USER'));
 	define('DB_PASSWORD', getenv('DB_PASSWORD'));
 	define('DB_HOST', getenv('DB_HOST'));
+
+	// Disable debug in production
+	define('WP_DEBUG', false);
+
+	// Set production environment type
+	define('WP_ENVIRONMENT_TYPE',	'production');
 } else {
 	// Local development database details
 	define('DB_NAME', 'local');
 	define('DB_USER', 'root');
 	define('DB_PASSWORD', 'root');
 	define('DB_HOST', 'localhost');
+
+	// Enable debug for local development
+	define('WP_DEBUG', true);
+
+	// Set local environment type
+	define('WP_ENVIRONMENT_TYPE', 'local');
 }
+
 /** Database charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
@@ -78,25 +91,6 @@ $table_prefix = 'wp_';
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-
-
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- *
- * For information on other constants that can be used for debugging,
- * visit the documentation.
- *
- * @link https://wordpress.org/support/article/debugging-in-wordpress/
- */
-if (! defined('WP_DEBUG')) {
-	define('WP_DEBUG', false);
-}
-
-define('WP_ENVIRONMENT_TYPE', 'local');
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
