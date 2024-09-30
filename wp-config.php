@@ -20,16 +20,18 @@
  * @package WordPress
  */
 
-// ** Database settings - You can get this info from your web host ** //
-// ** Environment detection by server name ** //
-if (strpos($_SERVER['HTTP_HOST'], 'gym.irfanisilviana.com') !== false) {
-	// Production environment (Hostinger live site)
+// Set WP_ENV to 'production' for the live site
+define('WP_ENV', 'production');
+
+// ** Database settings ** //
+if (getenv('WP_ENV') === 'production') {
+	// Production database details
 	define('DB_NAME', getenv('DB_NAME'));
 	define('DB_USER', getenv('DB_USER'));
 	define('DB_PASSWORD', getenv('DB_PASSWORD'));
 	define('DB_HOST', getenv('DB_HOST'));
 } else {
-	// Local environment (your local setup)
+	// Local development database details
 	define('DB_NAME', 'local');
 	define('DB_USER', 'root');
 	define('DB_PASSWORD', 'root');
