@@ -20,16 +20,24 @@
  * @package WordPress
  */
 
-// Set WP_ENV to 'production' for the live site
-define('WP_ENV', 'production');
+// Load Composer's autoload file to include the phpdotenv library
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Load the .env file from the root of the project
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Define WP_ENV based on the .env file value or default to 'local'
+define('WP_ENV', $_ENV['WP_ENV'] ?? 'local');
+
 
 // ** Database settings ** //
 if (defined('WP_ENV') && WP_ENV === 'production') {
-	// Production database details
-	define('DB_NAME', getenv('DB_NAME'));
-	define('DB_USER', getenv('DB_USER'));
-	define('DB_PASSWORD', getenv('DB_PASSWORD'));
-	define('DB_HOST', getenv('DB_HOST'));
+	// Production environment
+	define('DB_NAME', $_ENV['DB_NAME']);
+	define('DB_USER', $_ENV['DB_USER']);
+	define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
+	define('DB_HOST', $_ENV['DB_HOST']);
 
 	// Disable debug in production
 	define('WP_DEBUG', false);
