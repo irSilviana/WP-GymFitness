@@ -23,8 +23,16 @@
 // Load Composer autoloader
 require_once __DIR__ . '/vendor/autoload.php'; // Adjust this path if necessary
 
-// Load the .env file from outside public_html
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+// Determine if the environment is local or production
+if (file_exists(__DIR__ . '/../.env')) {
+	// Production environment (load .env from one directory up)
+	$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+} else {
+	// Local environment (load .env from the current directory)
+	$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+}
+
+// Load the environment variables
 $dotenv->load();
 
 // Define WP_ENV based on the environment variable
