@@ -21,7 +21,7 @@
  */
 
 // Load Composer autoloader
-require_once __DIR__ . '/../vendor/autoload.php'; // Adjust this path if necessary
+require_once __DIR__ . '/vendor/autoload.php'; // Adjust this path if necessary
 
 // Load the .env file from outside public_html
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
