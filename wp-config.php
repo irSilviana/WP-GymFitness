@@ -21,8 +21,8 @@
  */
 
 // ** Database settings - You can get this info from your web host ** //
-// ** Environment-based database settings ** //
-if (getenv('WP_ENV') === 'production') {
+// ** Environment detection by server name ** //
+if (strpos($_SERVER['HTTP_HOST'], 'gym.irfanisilviana.com') !== false) {
 	// Production environment (Hostinger live site)
 	define('DB_NAME', getenv('DB_NAME'));
 	define('DB_USER', getenv('DB_USER'));
@@ -95,8 +95,6 @@ if (! defined('WP_DEBUG')) {
 }
 
 define('WP_ENVIRONMENT_TYPE', 'local');
-define('WP_ENV', 'production');
-
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
