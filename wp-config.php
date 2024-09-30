@@ -20,42 +20,29 @@
  * @package WordPress
  */
 
-// Load Composer's autoload file to include the phpdotenv library
-require_once __DIR__ . '/vendor/autoload.php';
+// Load Composer autoloader
+require_once __DIR__ . '/../vendor/autoload.php'; // Adjust this path if necessary
 
-// Load the .env file from the root of the project
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+// Load the .env file from outside public_html
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
-// Define WP_ENV based on the .env file value or default to 'local'
-define('WP_ENV', $_ENV['WP_ENV'] ?? 'local');
-
+// Define WP_ENV based on the environment variable
+define('WP_ENV', $_ENV['WP_ENV'] ?? 'local'); // Default to 'local' if not set
 
 // ** Database settings ** //
-if (defined('WP_ENV') && WP_ENV === 'production') {
+if (WP_ENV === 'production') {
 	// Production environment
 	define('DB_NAME', $_ENV['DB_NAME']);
 	define('DB_USER', $_ENV['DB_USER']);
 	define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
 	define('DB_HOST', $_ENV['DB_HOST']);
-
-	// Disable debug in production
-	define('WP_DEBUG', false);
-
-	// Set production environment type
-	define('WP_ENVIRONMENT_TYPE',	'production');
 } else {
-	// Local development database details
+	// Local environment
 	define('DB_NAME', 'local');
 	define('DB_USER', 'root');
 	define('DB_PASSWORD', 'root');
 	define('DB_HOST', 'localhost');
-
-	// Enable debug for local development
-	define('WP_DEBUG', true);
-
-	// Set local environment type
-	define('WP_ENVIRONMENT_TYPE', 'local');
 }
 
 /** Database charset to use in creating database tables. */
