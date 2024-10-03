@@ -3,16 +3,17 @@ $template_dir_URI = get_template_directory_uri();
 $stylesheet_uri = get_stylesheet_uri();
 
 // Create the Menus
-function gymfitness_menus()
-{
-  // WordPress Function
-  register_nav_menus(array(
-    'main-menu' => 'Main Menu'
-  ));
+if (!function_exists('gymfitness_menu')) {
+  function gymfitness_menus()
+  {
+    // WordPress Function
+    register_nav_menus(array(
+      'main-menu' => 'Main Menu'
+    ));
+  }
+  // Hook
+  add_action('init', 'gymfitness_menus');
 }
-
-// Hook
-add_action('init', 'gymfitness_menus');
 
 // Add Stylesheets and JS
 function gymfitness_scripts()
