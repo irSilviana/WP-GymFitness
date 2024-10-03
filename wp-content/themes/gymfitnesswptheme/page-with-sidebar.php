@@ -20,9 +20,8 @@ get_header(); ?>
 
     <?php endwhile; ?>
   </div>
-  <aside class="sidebar">
-    <h2>Sidebar here</h2>
-  </aside>
+  <!-- sidebar -->
+  <?php get_sidebar(); ?>
 </main>
 
 <?php get_footer(); ?>
