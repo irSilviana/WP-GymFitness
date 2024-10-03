@@ -21,6 +21,9 @@
         </div><!-- .logo -->
 
         <!-- Add menu -->
+        <div class="mobile-menu">
+          <div class="slicknav-wrapper"></div>
+        </div>
         <?php
         $args = array(
           'theme_location' => 'main-menu',
@@ -31,4 +34,5 @@
         ?>
       </div><!-- .navigation-bar -->
     </div><!-- .container -->
+
   </header>
