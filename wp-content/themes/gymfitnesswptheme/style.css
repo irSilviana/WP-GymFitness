@@ -92,7 +92,7 @@ ul {
 }
 
 .container {
-  max-width: 120rem; /* 1200px */
+  max-width: 144rem; /* 1440px */
   width: 95%;
   margin: 0 auto;
 }
@@ -358,4 +358,41 @@ p.content-class {
   font-family: var(--secondaryFont);
   font-size: 2.2rem;
   text-align: center;
+}
+
+/* Sidebar Area */
+.sidebar a {
+  color: var(--black);
+}
+
+.sidebar .widget {
+  margin-bottom: 2rem;
+}
+
+.widget .text-primary {
+  margin-bottom: 1rem;
+}
+
+.sidebar-class {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.sidebar .sidebar-widget-image {
+  flex: 0 0 30%;
+}
+
+.sidebar .class-content {
+  flex: 0 0 calc(70% - 2rem);
+}
+
+.sidebar .class-content p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sidebar .classes-header {
+  margin-bottom: 2rem;
 }
