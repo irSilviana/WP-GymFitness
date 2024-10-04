@@ -2,6 +2,9 @@
 $template_dir_URI = get_template_directory_uri();
 $stylesheet_uri = get_stylesheet_uri();
 
+// Link to the queries file
+require get_template_directory() . '/inc/queries.php';
+
 // Create the Menus
 if (!function_exists('gymfitness_menu')) {
   function gymfitness_menus()
