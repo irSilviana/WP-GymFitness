@@ -305,7 +305,7 @@ img {
   color: var(--black);
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .classes-list {
     display: flex;
     justify-content: space-between;
