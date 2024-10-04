@@ -31,7 +31,7 @@ function gymfitness_scripts()
   wp_enqueue_style('slicknavcss', $GLOBALS['template_dir_URI'] . '/css/slicknav.min.css', array(), '1.0.10');
 
   // Main Stylesheets
-  wp_enqueue_style('style', $GLOBALS['stylesheet_uri'], array('normalize', 'googlefont'), '1.0.0');
+  wp_enqueue_style('style', $GLOBALS['stylesheet_uri'], array('normalize', 'googlefont'), false);
 
   wp_enqueue_script('jquery');
 
