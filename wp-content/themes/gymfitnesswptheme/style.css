@@ -114,6 +114,10 @@ img {
   color: var(--primary);
 }
 
+.text-white {
+  color: var(--white);
+}
+
 .section {
   padding: 5rem 0;
 }
@@ -287,8 +291,9 @@ img {
   }
 }
 
-/* Classes List */
-.classes-list {
+/* Classes List & Blog Entries */
+.classes-list,
+.blog-entries {
   margin-top: 4rem;
 }
 
@@ -309,7 +314,8 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-  .classes-list {
+  .classes-list,
+  .blog-entries {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
