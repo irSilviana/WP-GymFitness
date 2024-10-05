@@ -6,7 +6,7 @@
   ?>
 
   <h2 class="text-center primary-text">
-    Author: <?php echo $author->data->display_name; ?>
+    Author: &nbsp; <?php echo $author->data->display_name; ?>
   </h2>
   <p class="text-center">
     <?php echo get_the_author_meta('description', $author->data->ID) ?>
