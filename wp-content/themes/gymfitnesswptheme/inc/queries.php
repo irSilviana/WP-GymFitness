@@ -53,7 +53,7 @@ function gymfitness_instructors_list()
         <div class="content text-center">
           <h3><?php the_title() ?></h3>
           <p>
-            <?php the_content() ?>
+            <?php the_field('short_bio') ?>
           </p>
           <div class="specialty">
             <?php
