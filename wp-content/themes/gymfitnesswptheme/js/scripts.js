@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
     mode: 'fade',
   });
 
-  // When the page is ready and the fixed menu position is > 300px
+  // When the page is ready and the fixed menu position is > 200px
   const headerScroll = document.querySelector('.navigation-bar');
   const rect = headerScroll.getBoundingClientRect();
   const topDistance = Math.abs(rect.top);
@@ -31,8 +31,8 @@ window.onscroll = () => {
 function fixedMenu(scroll) {
   const headerScroll = document.querySelector('.navigation-bar');
 
-  // in the case that the scroll is greater than 300, add some classes
-  if (scroll > 300) {
+  // in the case that the scroll is greater than 200, add some classes
+  if (scroll > 200) {
     headerScroll.classList.add('fixed-top');
   } else {
     headerScroll.classList.remove('fixed-top');
