@@ -1,11 +1,12 @@
 <?php
-function gymfitness_classes_list()
+function gymfitness_classes_list($number =  -1)
 {
 ?>
   <ul class="classes-list">
     <?php
     $args = array(
       'post_type' => 'gymfitness_classes',
+      'posts_per_page' => $number
     );
     //   Use WP_Query and append the results into $classes
     $classes = new WP_Query($args);
@@ -30,5 +31,49 @@ function gymfitness_classes_list()
     wp_reset_postdata(); ?>
   </ul>
 
+<?php
+}
+
+// Display the Instructors
+function gymfitness_instructors_list()
+{ ?>
+  <ul class="instructor-list">
+    <?php
+    $args = array(
+      'post_type' => 'instructors',
+      'posts_per_page' => 20
+    );
+
+    $instructors = new WP_Query($args);
+
+    while ($instructors->have_posts()): $instructors->the_post();
+    ?>
+      <li class="instructor">
+        <?php the_post_thumbnail('mediumSize') ?>
+        <div class="content text-center">
+          <h3><?php the_title() ?></h3>
+          <p>
+            <?php the_content() ?>
+          </p>
+          <div class="specialty">
+            <?php
+            $specialty = get_field('specialty');
+
+            foreach ($specialty as $s) { ?>
+              <span class="tag">
+                <?php echo $s; ?>
+              </span>
+            <?php
+            }
+            ?>
+          </div>
+        </div>
+      </li>
+
+    <?php
+
+    endwhile;
+    wp_reset_postdata(); ?>
+  </ul>
 <?php
 }

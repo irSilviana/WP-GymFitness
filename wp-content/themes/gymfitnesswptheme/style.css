@@ -122,6 +122,32 @@ img {
   padding: 5rem 0;
 }
 
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  display: block;
+  background-color: var(--primary);
+  color: var(--white);
+  flex: 1;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2rem;
+  font-family: var(--mainFont);
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    flex: 0 0 auto;
+  }
+}
+
 /* Header */
 .site-header {
   background-color: var(--darkGray);
@@ -623,4 +649,9 @@ div.wpcf7 .ajax-loader {
   .areas-container .area:hover p {
     opacity: 1;
   }
+}
+
+/* Classes Homepage */
+.classes-homepage {
+  background-color: var(--lightGray);
 }
