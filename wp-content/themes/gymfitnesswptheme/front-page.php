@@ -20,17 +20,20 @@
         3 => get_field('area_4'),
       );
 
-      foreach ($areas as $key => $value) {
+      // Loop through the areas
+      foreach ($areas as $area) {
+        // Check if the area exists (i.e., the ACF field is not empty)
+        if (!empty($area)) {
+          // Retrieve the image ID and get the URL for the medium size image
+          $image_id = $area['area_image'];
+          $image_url = wp_get_attachment_image_src($image_id, 'medium')[0];
       ?>
-        <li class="area">
-          <?php
-          $key = get_field('area_' . $key + 1);
-          $image = wp_get_attachment_image_src($key['area_image'], 'mediumSize')[0];
-          ?>
-          <img src="<?php echo $image ?>">
-          <p><?php echo $key['area_name']; ?></p>
-        </li>
+          <li class="area">
+            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($area['area_name']); ?>">
+            <p><?php echo esc_html($area['area_name']); ?></p>
+          </li>
       <?php
+        }
       }
       ?>
     </ul>
