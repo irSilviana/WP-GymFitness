@@ -143,6 +143,38 @@ img {
   align-items: center;
 }
 
+/* Front Header */
+body.home .site-header {
+  display: block;
+  height: 100vh;
+  min-height: 65rem;
+  padding-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  body.home .header-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+  body.home .navigation-bar {
+    grid-column: 1/5;
+  }
+}
+
+.tagline {
+  color: var(--white);
+  margin-top: 10rem;
+}
+
+@media screen and (min-width: 768px) {
+  .tagline {
+    grid-column: 2/4;
+    grid-row: 2/3;
+    margin-top: 0;
+  }
+}
+
 /* Main menu */
 .main-menu {
   display: none;
