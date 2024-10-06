@@ -89,6 +89,26 @@
       </ul>
     </div>
   </section>
+
+  <section class="blog container section">
+    <h2 class="text-center">
+      Our Blog
+    </h2>
+    <p class="text-center">Read our experts blog post to achieve your goals</p>
+    <ul class="blog-entries">
+      <?php
+      $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 4
+      );
+      $blog = new WP_Query($args);
+      while ($blog->have_posts()): $blog->the_post(); ?>
+        <?php get_template_part('template-parts/blog', 'loop') ?>
+      <?php endwhile;
+      wp_reset_postdata(); ?>
+    </ul>
+
+  </section>
 <?php endwhile; ?>
 
 <?php get_footer() ?>
