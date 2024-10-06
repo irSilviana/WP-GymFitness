@@ -94,7 +94,7 @@ function gymfitness_hero_image()
     $image = $image_id['url'];
     // Create a "FALSE" stylesheet 
     wp_register_style('custom', false);
-    wp_enqueue_style('custom');
+    wp_enqueue_style('custom', false);
     $featured_image_css = "
     body.home .site-header{
       background-image: linear-gradient(rgba(0,0,0, 0.75), rgba(0,0,0, 0.75)), url($image);
