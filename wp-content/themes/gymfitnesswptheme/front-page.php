@@ -64,7 +64,7 @@
     <h2 class="text-center">
       Testimonials
     </h2>
-    <div class="container">
+    <div class="container-testimonials">
       <ul class="testimonials-list">
         <?php
         $args = array(

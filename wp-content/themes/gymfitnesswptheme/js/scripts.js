@@ -8,5 +8,8 @@ jQuery(document).ready(function ($) {
   });
 
   // Run the bxSlider library on testimonial section
-  $('.testimonials-list').bxSlider();
+  $('.testimonials-list').bxSlider({
+    controls: false,
+    mode: 'fade',
+  });
 });
