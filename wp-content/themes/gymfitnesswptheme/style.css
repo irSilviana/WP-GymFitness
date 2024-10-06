@@ -759,7 +759,7 @@ div.wpcf7 .ajax-loader {
 .testimonials {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url(img/testimonial-bg.jpg);
-  padding: 12rem;
+  padding: 5rem 3rem;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -794,7 +794,7 @@ div.wpcf7 .ajax-loader {
 
 .testimonial blockquote {
   position: relative;
-  padding-left: 12rem;
+  padding-left: 8rem;
 }
 .testimonial blockquote::before {
   content: '';
@@ -806,11 +806,20 @@ div.wpcf7 .ajax-loader {
   height: 9rem;
   background-image: url(img/quote.svg);
   background-repeat: no-repeat;
+  background-size: 60%;
 }
 
 @media screen and (min-width: 768px) {
   .testimonial-footer {
     justify-content: flex-end;
+  }
+
+  .testimonial blockquote {
+    padding-left: 12rem;
+  }
+
+  .testimonial blockquote::before {
+    background-size: 100%;
   }
 }
 
