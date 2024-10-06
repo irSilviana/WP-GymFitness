@@ -194,6 +194,25 @@ body.home .logo img {
   body.home .navigation-bar {
     grid-column: 1/5;
   }
+
+  .fixed-top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--darkGray);
+    z-index: 9999;
+    padding: 1rem 5rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  body.home .fixed-top .logo img {
+    width: 8rem;
+  }
+
+  .fixed-top .main-menu a {
+    font-size: 1.5rem;
+  }
 }
 
 .tagline {
@@ -239,6 +258,13 @@ body.home .logo img {
   padding: 0.05rem 0.2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .main-menu a {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
 .main-menu .current_page_item {
   border-bottom: 3px solid var(--primary);
 }
@@ -259,14 +285,17 @@ body.home .logo img {
   }
 }
 .slicknav_menu {
-  background-color: var(--darkGray);
+  background-color: transparent;
 }
 
 .slicknav_btn {
   background-color: var(--primary);
 }
 .slicknav_nav {
+  background-color: var(--darkGray);
   width: 100vw;
+  padding-top: 5rem;
+  margin-top: 9rem;
 }
 .slicknav_nav a {
   font-size: 2.4rem;

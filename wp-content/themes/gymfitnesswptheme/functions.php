@@ -75,6 +75,9 @@ function gymfitness_setup()
 
   // Featured image
   add_theme_support('post-thumbnails');
+
+  // SEO Titles
+  add_theme_support('title-tag');
 }
 add_action('after_setup_theme', 'gymfitness_setup'); //when the theme is activated and ready
 
