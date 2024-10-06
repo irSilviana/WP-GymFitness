@@ -98,6 +98,9 @@ function gymfitness_hero_image()
     $featured_image_css = "
     body.home .site-header{
       background-image: linear-gradient(rgba(0,0,0, 0.75), rgba(0,0,0, 0.75)), url($image);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
       }
       ";
     wp_add_inline_style('custom', $featured_image_css);
